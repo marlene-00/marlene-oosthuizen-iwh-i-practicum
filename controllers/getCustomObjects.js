@@ -10,8 +10,8 @@ import axios from "axios";
 export const getCustomObjects = async (req, res) => {
 
     // Setup of axios request
-    const objectTypeId = '2-140305173';
-    const properties = 'plant_namez,species,plant_size';
+    const objectTypeId = 'p145883771_plants';
+    const properties = 'plant_name,species,plant_size';
     const getCustomObjectEndpoint = `https://api.hubapi.com/crm/v3/objects/${objectTypeId}?properties=${properties}`;
     const axiosConfig = {
         method: 'get',
@@ -26,7 +26,7 @@ export const getCustomObjects = async (req, res) => {
     try {
 
         const response = await axios(axiosConfig);
-        const data = response.data;
+        const data = response.data.results;
         res.render('customObjects', { title: 'Custom Object | Plants', data });
 
     } catch (error) {

@@ -17,9 +17,14 @@ const __dirname = path.dirname(__filename)
 app.use(express.static(path.join(__dirname, 'public')))
 
 //setup of the view engine
+
 app.set("views", path.join(__dirname, 'views'))
 app.set("view engine", "pug")
+// Parse application/x-www-form-urlencoded form data
+app.use(express.urlencoded({ extended: true }));
 
+// Enable json parsing
+app.use(express.json());
 //registration of routes
 app.use("/", getCustomObjects)
 app.use("/", updateCustomObjects)

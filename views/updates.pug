@@ -6,23 +6,23 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel="stylesheet", href="/css/style.css")
     body
-        .updates
+        .form-wrapper
             // Interpolation of the title
             h1.updates__heading #{title}
             // Link back to the homepage
             a.updates__homepage-link(href="/") Homepage
             // Setup of the form with a POST method for submitting data to the HubSpot API for addition to the
             // custom object
-            form.updates__form(method="POST")
+            form.updates__form(action="/update-cobj" method="POST")
                 .updates__form-control
-                    label(for="plant-namez") Plant Namez
-                    input(type="text" name="plantNamez" id="plant-namez")
+                    label(for="plant-name") Plant Name
+                    input(type="text" name="plant_name" id="plant-name")
                 .updates__form-control
                     label(for="plant-size") Plant Size
-                    input(type="text" name="plantSize" id="plant-size")
+                    input(type="text" name="plant_size" id="plant-size")
                 .updates__form-control
                     label(for="plant-species") Plant Species
-                    input(type="text" name="Species" id="plant-species")
+                    input(type="text" name="species" id="plant-species")
                 // Submit button to trigger submission of data to the /update-cobj post route
                 .updates__form-control-btn
                     input(type="submit" value="Submit")

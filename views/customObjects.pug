@@ -14,7 +14,7 @@ html
             // Setup of the table needed to render the data
             table.custom-plants__table
                 tr.custom-plants__table__header-row
-                    th.custom-plantz__table__heading Namez
+                    th.custom-plants__table__heading Name
                     th.custom-plants__table__heading Species
                     th.custom-plants__table__heading Size
                     // Loop through the data received from the get route that contains individual records of the
@@ -22,6 +22,6 @@ html
                 each customPlants in data
                     tr.custom-plants__table__row
                         // Interpolation of the specific data points into a table
-                        td.custom-plants__table__cell #{customPlants.properties.plant_namez}
+                        td.custom-plants__table__cell #{customPlants.properties.plant_name}
                         td.custom-plants__table__cell #{customPlants.properties.species}
                         td.custom-plants__table__cell #{customPlants.properties.plant_size}
